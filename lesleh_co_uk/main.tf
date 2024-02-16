@@ -205,16 +205,6 @@ resource "aws_route53_record" "lesleh_co_uk_cname__www" {
   ]
 }
 
-resource "aws_route53_record" "lesleh_co_uk_a__windows" {
-  zone_id = aws_route53_zone.lesleh_co_uk_zone.id
-  name = "windows.lesleh.co.uk"
-  type = "A"
-  ttl = "60"
-  records = [
-    "13.42.8.98"
-  ]
-}
-
 resource "aws_route53_record" "lesleh_co_uk_a__home" {
   zone_id = aws_route53_zone.lesleh_co_uk_zone.id
   name = "home.lesleh.co.uk"
