@@ -1,3 +1,7 @@
+//----------------------------------------------------------------------
+// AWS Route 53 domain registration for lesleh.co.uk
+//----------------------------------------------------------------------
+
 resource "aws_route53domains_registered_domain" "lesleh_co_uk_registered_domain" {
   domain_name = "lesleh.co.uk"
 
@@ -134,40 +138,6 @@ resource "aws_route53_record" "lesleh_co_uk_cname__pircfq5ibpexkhsmvisodkkmbrwoy
   ttl     = "1800"
   records = [
     "pircfq5ibpexkhsmvisodkkmbrwoymyk.dkim.amazonses.com"
-  ]
-}
-
-#----------------------------------------------
-# ACM validation records
-#----------------------------------------------
-
-resource "aws_route53_record" "lesleh_co_uk_cname___fc8e355558aadd2e111427c164f1e0bf" {
-  zone_id = aws_route53_zone.lesleh_co_uk_zone.id
-  name    = "_fc8e355558aadd2e111427c164f1e0bf.lesleh.co.uk"
-  type    = "CNAME"
-  ttl     = "300"
-  records = [
-    "_2a1871b96968838b751ac31f67490282.tljzshvwok.acm-validations.aws."
-  ]
-}
-
-resource "aws_route53_record" "lesleh_co_uk_cname___180821d5950a46c523572094c152e201" {
-  zone_id = aws_route53_zone.lesleh_co_uk_zone.id
-  name    = "_180821d5950a46c523572094c152e201.fns-dev.lesleh.co.uk"
-  type    = "CNAME"
-  ttl     = "300"
-  records = [
-    "_6544caeedd9e845ffade431ce31911e4.jddtvkljgg.acm-validations.aws."
-  ]
-}
-
-resource "aws_route53_record" "lesleh_co_uk_cname___7bdb23ae8bd898a3733cb7c30b4cbfd0" {
-  zone_id = aws_route53_zone.lesleh_co_uk_zone.id
-  name    = "_7bdb23ae8bd898a3733cb7c30b4cbfd0.fns.lesleh.co.uk"
-  type    = "CNAME"
-  ttl     = "300"
-  records = [
-    "_06982a79059ce6c7c748259d5b2e5caf.jddtvkljgg.acm-validations.aws."
   ]
 }
 

@@ -12,13 +12,13 @@ resource "aws_lambda_function_url" "current_time_url" {
 resource "aws_lambda_function" "current_time_function" {
   function_name = "current_time"
 
-  filename      = data.archive_file.current_time_zip.output_path
+  filename         = data.archive_file.current_time_zip.output_path
   source_code_hash = data.archive_file.current_time_zip.output_base64sha256
 
-  handler       = "current_time.handler"
-  runtime       = "nodejs20.x"
+  handler = "current_time.handler"
+  runtime = "nodejs20.x"
 
-  role          = aws_iam_role.iam_for_current_time.arn
+  role = aws_iam_role.iam_for_current_time.arn
 }
 
 resource "aws_iam_role" "iam_for_current_time" {
