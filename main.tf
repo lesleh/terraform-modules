@@ -20,5 +20,7 @@ module "lesleh_co_uk_certificate" {
     aws = aws.virginia
   }
 
+  depends_on = [ module.lesleh_co_uk ]
+
   aws_route53_zone_id = module.lesleh_co_uk.zone_id
 }
