@@ -2,6 +2,10 @@ module "lesleh_co_uk" {
   source = "./lesleh_co_uk"
 }
 
+module "container_registry" {
+  source = "./container_registry"
+}
+
 module "public_storage" {
   source = "./public_storage"
 }
